@@ -13,7 +13,10 @@ class NavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Text('Text'),
-      bottomNavigationBar: Container(height: 100, color: Colors.amber),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'SCHOOL'),
+      ]),
     );
   }
 }
