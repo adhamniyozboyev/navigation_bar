@@ -14,12 +14,13 @@ class NavigationBar extends StatefulWidget {
 }
 
 class _NavigationBarState extends State<NavigationBar> {
-  int _currentIndex = 2;
+  int _currentIndex = 0;
+  List screens = ['Home', 'Office', 'School'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Home')),
+      body: Center(child: Text(screens[_currentIndex])),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: (value) => setState(() {
