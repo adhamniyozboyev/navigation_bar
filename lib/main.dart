@@ -6,21 +6,30 @@ void main() {
   ));
 }
 
-class NavigationBar extends StatelessWidget {
-  const NavigationBar({Key? key}) : super(key: key);
+class NavigationBar extends StatefulWidget {
+  NavigationBar({Key? key}) : super(key: key);
+
+  @override
+  State<NavigationBar> createState() => _NavigationBarState();
+}
+
+class _NavigationBarState extends State<NavigationBar> {
+  int _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Text('Text'),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) => print('$value'),
+        onTap: (value) => setState(() {
+          _currentIndex = value;
+        }),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
           BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Office'),
           BottomNavigationBarItem(icon: Icon(Icons.school), label: 'SCHOOL'),
         ],
-        currentIndex: 1,
+        currentIndex: _currentIndex,
       ),
     );
   }
