@@ -21,6 +21,7 @@ class _NavigationBarState extends State<NavigationBar> {
     return Scaffold(
       body: Text('Text'),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         onTap: (value) => setState(() {
           _currentIndex = value;
         }),
