@@ -14,12 +14,13 @@ class NavigationBar extends StatelessWidget {
     return Scaffold(
       body: Text('Text'),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) => print('$value'),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
           BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Office'),
           BottomNavigationBarItem(icon: Icon(Icons.school), label: 'SCHOOL'),
         ],
-        currentIndex: 0,
+        currentIndex: 1,
       ),
     );
   }
