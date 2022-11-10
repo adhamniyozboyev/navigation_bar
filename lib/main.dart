@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_bar/screens/home_page.dart';
+import 'package:navigation_bar/screens/office_page.dart';
+import 'package:navigation_bar/screens/school_page.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,15 +19,15 @@ class NavigationBar extends StatefulWidget {
 class _NavigationBarState extends State<NavigationBar> {
   int _currentIndex = 0;
   List<Widget> screens = [
-    Center(child: Text('Home')),
-    Center(child: Text('office')),
-    Center(child: Text('school'))
+    HomePage(),
+    OfficePage(),
+    SchoolPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: screens[_currentIndex]),
+      body: screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: (value) => setState(() {
