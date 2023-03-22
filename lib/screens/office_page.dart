@@ -5,8 +5,18 @@ class OfficePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text('Office')),
+    return Scaffold(
+      body: Column(
+        children: [
+          Image.network('https://codeschool.uz/assets/images/gallery/5.jpg'),
+          Card(
+            child: Text(
+              'It is our education center.It is very comfortable and helpful.There are 70 pupils and 10 teachers.All pupils have a computer',
+              style: TextStyle(fontSize: 30),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

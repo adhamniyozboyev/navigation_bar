@@ -29,7 +29,9 @@ class _NavigationBarState extends State<NavigationBar> {
     return Scaffold(
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
+        fixedColor: Colors.pink,
+        unselectedItemColor: Colors.blue,
         onTap: (value) => setState(() {
           _currentIndex = value;
         }),
