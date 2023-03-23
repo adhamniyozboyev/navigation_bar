@@ -26,21 +26,26 @@ class _NavigationBarState extends State<NavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
-        fixedColor: Colors.pink,
-        unselectedItemColor: Colors.blue,
-        onTap: (value) => setState(() {
-          _currentIndex = value;
-        }),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Office'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'SCHOOL'),
-        ],
-        currentIndex: _currentIndex,
+    return MaterialApp(
+      home: Scaffold(
+        
+        body: screens[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          selectedItemColor: Colors.red,
+          // selectedIconTheme: IconThemeData(color: Colors.blue),
+          selectedLabelStyle: const TextStyle(fontSize: 20, color: Colors.red),
+          onTap: (value) => setState(() {
+            _currentIndex = value;
+          }),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.business), label: 'Office'),
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'SCHOOL'),
+          ],
+        ),
       ),
     );
   }
